@@ -25,7 +25,9 @@ jobs:
             if [[ "$CIRCLE_TAG" != "" ]]; then
               echo "Preparing Docker tags for Git Tag"
               docker tag $QUAY_IMAGE:$CIRCLE_SHA1 $QUAY_IMAGE:$CIRCLE_TAG
+              docker tag $QUAY_IMAGE:$CIRCLE_SHA1 $QUAY_IMAGE:latest
               docker tag $QUAY_IMAGE:$CIRCLE_SHA1 $OVH_IMAGE:$CIRCLE_TAG
+              docker tag $QUAY_IMAGE:$CIRCLE_SHA1 $OVH_IMAGE:latest
             fi
       - run:
           name: Upload Docker image
@@ -34,8 +36,10 @@ jobs:
               echo "Uploading Docker tags for Git Tag"
               docker login -u $QUAY_USERNAME -p $QUAY_PASSWORD quay.io
               docker push $QUAY_IMAGE:$CIRCLE_TAG
+              docker push $QUAY_IMAGE:latest
               docker login -u $OVH_USERNAME -p $OVH_PASSWORD 62q52315.gra7.container-registry.ovh.net
               docker push $OVH_IMAGE:$CIRCLE_TAG
+              docker push $OVH_IMAGE:latest
             fi
   slack-notify:
     docker:
