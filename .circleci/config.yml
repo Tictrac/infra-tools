@@ -5,7 +5,7 @@ executors:
     docker:
       - image: docker
     environment:
-      OVH_IMAGE: 62q52315.gra7.container-registry.ovh.net/tictrac/infra-tools
+      OVH_IMAGE: 62q52315.gra7.container-registry.ovh.net/public/infra-tools
       QUAY_IMAGE: quay.io/tictrac/infra-tools
 
 jobs:
