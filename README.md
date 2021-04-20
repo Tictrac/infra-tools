@@ -10,12 +10,7 @@ Circle CI config is used for automatic build & pushing Docker image to repositor
  - bash
 ## Docker
 To pull docker image use following command:
-For Quay.io:
+For JFrog:
 ```
-docker pull quay.io/tictrac/infra-tools:<tag>
-```
-
-For OVH:
-```
-docker pull 62q52315.gra7.container-registry.ovh.net/public/infra-tools:<tag>
+docker pull tictrac.jfrog.io/tictrac/infra-tools:<tag>
 ```
