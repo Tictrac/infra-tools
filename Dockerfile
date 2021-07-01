@@ -2,6 +2,6 @@ FROM alpine:3.8
 
 MAINTAINER Tictrac <developer@tictrac.com>
 
-RUN apk add curl bash
+RUN apk add curl bash jq
 
 ENTRYPOINT ["bash"]
