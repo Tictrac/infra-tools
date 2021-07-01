@@ -8,6 +8,8 @@ Circle CI config is used for automatic build & pushing Docker image to repositor
 ## Tools
  - curl
  - bash
+ - jq
+
 ## Docker
 To pull docker image use following command:
 For JFrog:
